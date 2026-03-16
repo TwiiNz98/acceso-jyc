@@ -1,0 +1,21 @@
+/* skeleton.css */
+.skeleton-card {
+  background: #fff;
+  border: 1.5px solid var(--jyc-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.skeleton-img {
+  aspect-ratio: 1/1;
+  background: linear-gradient(90deg, #f0e8df 25%, #fdf0e5 50%, #f0e8df 75%);
+  background-size: 936px 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+.skeleton-body { padding: var(--space-md); display: flex; flex-direction: column; gap: 8px; }
+.skeleton-line {
+  height: 12px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #f0e8df 25%, #fdf0e5 50%, #f0e8df 75%);
+  background-size: 936px 100%;
+  animation: shimmer 1.5s infinite linear;
+}

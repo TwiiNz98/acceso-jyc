@@ -1,0 +1,159 @@
+/* =============================================
+   J&C TIENDA — animations.css
+   Keyframes y sistema de animaciones
+   ============================================= */
+
+/* --- PAGE TRANSITIONS --- */
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pageOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-12px); }
+}
+#app.page-entering { animation: pageIn 0.35s ease forwards; }
+#app.page-leaving  { animation: pageOut 0.2s ease forwards; }
+
+/* --- SCROLL REVEAL --- */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Stagger para grids */
+.products-grid .product-card:nth-child(1) { transition-delay: 0ms; }
+.products-grid .product-card:nth-child(2) { transition-delay: 80ms; }
+.products-grid .product-card:nth-child(3) { transition-delay: 160ms; }
+.products-grid .product-card:nth-child(4) { transition-delay: 240ms; }
+.products-grid .product-card:nth-child(5) { transition-delay: 80ms; }
+.products-grid .product-card:nth-child(6) { transition-delay: 160ms; }
+.products-grid .product-card:nth-child(7) { transition-delay: 240ms; }
+.products-grid .product-card:nth-child(8) { transition-delay: 320ms; }
+.reviews-grid .review-card:nth-child(1) { transition-delay: 0ms; }
+.reviews-grid .review-card:nth-child(2) { transition-delay: 100ms; }
+.reviews-grid .review-card:nth-child(3) { transition-delay: 200ms; }
+
+/* --- HERO ANIMATIONS --- */
+@keyframes heroTitleIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero__slide.active .hero__slide-title {
+  animation: heroTitleIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.2s both;
+}
+.hero__slide.active .hero__slide-subtitle {
+  animation: heroTitleIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.38s both;
+}
+.hero__slide.active .hero__slide-cta {
+  animation: heroTitleIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.52s both;
+}
+
+/* --- TICKER (carrusel automático) --- */
+@keyframes tickerScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-track {
+  display: flex;
+  animation: tickerScroll 24s linear infinite;
+  will-change: transform;
+}
+.ticker-track:hover { animation-play-state: paused; }
+
+/* --- FLOATING WA BUTTON --- */
+@keyframes waFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+/* --- NAVBAR SCROLL STATE --- */
+.navbar { transition: background var(--transition-base), box-shadow var(--transition-base); }
+.navbar.scrolled {
+  background: var(--jyc-black) !important;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+}
+
+/* --- CARD HOVER --- */
+.product-card {
+  transition:
+    transform var(--transition-spring),
+    box-shadow var(--transition-base);
+}
+.product-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--shadow-md);
+}
+.product-card:active { transform: scale(0.98); }
+
+/* --- CATEGORY CARD --- */
+.category-card {
+  transition: transform var(--transition-spring), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+/* --- MODAL TRANSITIONS --- */
+@keyframes modalBgIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modalIn    { from { opacity: 0; transform: translateY(40px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes modalBgOut { from { opacity: 1; } to { opacity: 0; } }
+@keyframes modalOut   { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(20px); } }
+
+.modal-overlay.open   { animation: modalBgIn 0.25s ease forwards; }
+.modal-overlay.open .modal { animation: modalIn 0.3s cubic-bezier(0.22,1,0.36,1) 0.05s both; }
+.modal-overlay.closing { animation: modalBgOut 0.2s ease forwards; }
+.modal-overlay.closing .modal { animation: modalOut 0.2s ease forwards; }
+
+/* --- TOAST --- */
+@keyframes toastIn  { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes toastOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(20px); } }
+.toast { animation: toastIn 0.3s ease forwards; }
+.toast.hide { animation: toastOut 0.3s ease forwards; }
+
+/* --- SKELETON SHIMMER --- */
+@keyframes shimmer {
+  0%   { background-position: -468px 0; }
+  100% { background-position: 468px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #f0e8df 25%, #fdf0e5 50%, #f0e8df 75%);
+  background-size: 936px 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: var(--radius-sm);
+}
+
+/* --- HAMBURGER ANIMATION --- */
+.navbar__hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.navbar__hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.navbar__hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* --- MOBILE MENU SLIDE --- */
+@keyframes mobileMenuIn  { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes mobileMenuOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-20px); } }
+.mobile-menu.open    { animation: mobileMenuIn 0.3s ease forwards; }
+.mobile-menu.closing { animation: mobileMenuOut 0.25s ease forwards; }
+
+/* --- HERO SLIDE TRANSITION --- */
+.hero__slide {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.hero__slide.prev { opacity: 0; transform: translateX(-30px); }
+.hero__slide.next { opacity: 0; transform: translateX(30px); }
+.hero__slide.active { opacity: 1; transform: translateX(0); }
+
+/* --- CLIP-PATH REVEAL (about section) --- */
+.clip-reveal {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+.clip-reveal.visible { clip-path: inset(0 0% 0 0); }
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**", "admin/**"],
+    "rewrites": [
+      { "source": "/catalogo", "destination": "/index.html" },
+      { "source": "/nosotros", "destination": "/index.html" },
+      { "source": "/contacto", "destination": "/index.html" },
+      { "source": "/productos", "destination": "/index.html" },
+      { "source": "**", "destination": "/index.html" }
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(js|css)",
+        "headers": [{ "key": "Cache-Control", "value": "max-age=604800" }]
+      },
+      {
+        "source": "**/*.@(jpg|jpeg|png|svg|gif|webp)",
+        "headers": [{ "key": "Cache-Control", "value": "max-age=2592000" }]
+      }
+    ]
+  }
+}

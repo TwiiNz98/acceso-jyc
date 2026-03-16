@@ -1,0 +1,40 @@
+<!-- PARTIAL: CATÁLOGO — partials/catalogo.html -->
+
+<div class="catalogo-header">
+  <div class="container">
+    <span class="section__label" style="color:var(--c-terra-light);">Todos nuestros productos</span>
+    <h1>Catálogo J&amp;C</h1>
+    <p>Encuentra dulces, chocolates, regalos y más para toda la familia.</p>
+    <input
+      type="search"
+      class="catalogo-search"
+      id="catalogo-search"
+      placeholder="🔍 Buscar producto..."
+      autocomplete="off"
+      aria-label="Buscar productos"
+    >
+  </div>
+</div>
+
+<section class="catalogo-body section--white">
+  <div class="container">
+    <!-- Filtros por categoría -->
+    <div class="category-filters" id="catalogo-filters" role="group" aria-label="Filtrar por categoría">
+      <!-- Generado por CatalogoPage._renderFilters() -->
+      <button class="category-chip active" data-category="todos">🛍️ Todos</button>
+    </div>
+
+    <!-- Contador de resultados -->
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:8px;">
+      <p style="font-size:13px;color:var(--c-muted);">
+        Mostrando <strong id="catalogo-count">0 productos</strong>
+      </p>
+      <p style="font-size:12px;color:var(--c-muted);">Padre Hurtado · Maipú · Santiago</p>
+    </div>
+
+    <!-- Grid de productos -->
+    <div class="products-grid" id="catalogo-grid" aria-live="polite">
+      <!-- Generado por CatalogoPage y ProductCard.renderGrid() -->
+    </div>
+  </div>
+</section>

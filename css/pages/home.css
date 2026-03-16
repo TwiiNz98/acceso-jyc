@@ -1,0 +1,26 @@
+/* HOME PAGE */
+.home-categories { padding: var(--space-2xl) 0; background: var(--c-white); }
+.home-featured { padding: var(--space-2xl) 0; background: var(--c-cream); }
+.home-about { padding: var(--space-2xl) 0; background: var(--c-dark); }
+.home-about__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: center; }
+.home-about__image { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/3; background: #3C2C1C; display: flex; align-items: center; justify-content: center; font-size: 80px; }
+.home-about__pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-md); margin-top: var(--space-xl); }
+.home-about__pillar { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius-md); padding: var(--space-lg); text-align: center; }
+.home-about__pillar-icon { font-size: 28px; margin-bottom: 10px; }
+.home-about__pillar-title { font-family: var(--font-body); font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+.home-about__pillar-text { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.6; }
+
+.home-testimonials { padding: var(--space-2xl) 0; background: var(--c-cream); }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-lg); }
+.testimonial-card { background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--radius-md); padding: var(--space-lg); }
+.testimonial-card__stars { color: var(--c-amber); font-size: 16px; margin-bottom: 12px; }
+.testimonial-card__text { font-size: 14px; line-height: 1.7; color: var(--c-muted); margin-bottom: 16px; font-style: italic; }
+.testimonial-card__author { font-size: 13px; font-weight: 600; color: var(--c-black); }
+.testimonial-card__location { font-size: 12px; color: var(--c-muted); }
+
+.home-cta { background: var(--c-terra); padding: var(--space-2xl) 0; text-align: center; }
+.home-cta__title { font-size: clamp(24px,4vw,40px); font-weight: 700; color: #fff; margin-bottom: 12px; }
+.home-cta__subtitle { font-size: 16px; color: rgba(255,255,255,.85); margin-bottom: 32px; }
+
+.home-coverage { padding: var(--space-xl) 0; background: var(--c-cream-dark); text-align: center; }
+.home-coverage h3 { font-size: 16px; font-weight: 600; margin-bottom: var(--space-md); color: var(--c-muted); text-transform: uppercase; letter-spacing: .08em; font-family: var(--font-body); }

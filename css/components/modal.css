@@ -1,0 +1,107 @@
+/* modal.css */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26,10,5,0.65);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  opacity: 0;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+  transition: opacity 0.25s ease;
+}
+.modal-overlay.open { opacity: 1; pointer-events: auto; }
+.modal {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  max-width: 680px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+  transform: translateY(30px) scale(0.96);
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
+}
+.modal-overlay.open .modal { transform: translateY(0) scale(1); }
+.modal__close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 36px;
+  height: 36px;
+  background: var(--jyc-cream);
+  border: none;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--jyc-black);
+  z-index: 10;
+  transition: all var(--transition-base);
+}
+.modal__close:hover { background: var(--jyc-terra); color: #fff; transform: scale(1.1); }
+.modal__content { padding: var(--space-xl); }
+.modal-product { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
+.modal-product__image {
+  aspect-ratio: 1/1;
+  background: var(--jyc-cream);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  overflow: hidden;
+  border: 1.5px solid var(--jyc-border);
+}
+.modal-product__image img { width: 100%; height: 100%; object-fit: cover; }
+.modal-product__info { display: flex; flex-direction: column; gap: var(--space-md); }
+.modal-product__category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--jyc-muted);
+  font-weight: 600;
+}
+.modal-product__name {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--jyc-black);
+  line-height: 1.2;
+}
+.modal-product__desc { color: var(--jyc-muted); font-size: 0.95rem; line-height: 1.7; }
+.modal-product__price-block { display: flex; align-items: center; gap: var(--space-md); flex-wrap: wrap; }
+.modal-product__price { font-size: 2rem; font-weight: 700; color: var(--jyc-terra); }
+.modal-product__compare { font-size: 1.1rem; text-decoration: line-through; color: var(--jyc-muted); }
+.modal-product__discount-pill {
+  background: #FEF3C7;
+  color: #92400E;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.modal-product__actions { display: flex; flex-direction: column; gap: var(--space-sm); margin-top: auto; }
+.modal-product__stock {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--jyc-green);
+  font-weight: 500;
+}
+.modal-product__stock::before {
+  content: '';
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--jyc-green);
+  display: inline-block;
+}
+.modal-product__stock.out { color: var(--jyc-muted); }
+.modal-product__stock.out::before { background: var(--jyc-muted); }

@@ -1,0 +1,146 @@
+/* cards.css */
+.product-card {
+  background: #fff;
+  border: 1.5px solid var(--jyc-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  animate-on-scroll: true;
+}
+.product-card__image-wrap {
+  position: relative;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background: var(--jyc-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-card__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.product-card:hover .product-card__image-wrap img {
+  transform: scale(1.06);
+}
+.product-card__emoji {
+  font-size: 3.5rem;
+  transition: transform 0.3s ease;
+}
+.product-card:hover .product-card__emoji {
+  transform: scale(1.1);
+}
+.product-card__badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  z-index: 2;
+}
+.badge--nuevo    { background: var(--jyc-terra);  color: #fff; }
+.badge--temporada{ background: var(--jyc-amber);  color: #5A3800; }
+.badge--oferta   { background: var(--jyc-black);  color: #fff; }
+.badge--limitado { background: var(--jyc-cream-dark); color: #7A2910; border: 1px solid var(--jyc-terra-light); }
+.product-card__body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 6px;
+}
+.product-card__category {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--jyc-muted);
+}
+.product-card__name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--jyc-black);
+  line-height: 1.35;
+  font-family: var(--font-body);
+}
+.product-card__price-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: auto;
+  padding-top: 6px;
+}
+.product-card__price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--jyc-terra);
+  font-variant-numeric: tabular-nums;
+}
+.product-card__compare {
+  font-size: 0.82rem;
+  color: var(--jyc-muted);
+  text-decoration: line-through;
+  font-variant-numeric: tabular-nums;
+}
+.product-card__discount {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: #FEF3C7;
+  color: #92400E;
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+}
+.product-card__actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+.product-card__btn-wa {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--jyc-green);
+  color: #fff;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+.product-card__btn-wa:hover { background: var(--jyc-green-dark); transform: scale(1.02); }
+.product-card__btn-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 12px;
+  border: 1.5px solid var(--jyc-border);
+  border-radius: var(--radius-sm);
+  color: var(--jyc-black);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: transparent;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+.product-card__btn-view:hover { border-color: var(--jyc-terra); color: var(--jyc-terra); }
+/* Stock agotado */
+.product-card.out-of-stock { opacity: 0.7; }
+.product-card.out-of-stock .product-card__btn-wa {
+  background: #ccc;
+  cursor: not-allowed;
+}
+.product-card.out-of-stock .product-card__btn-wa:hover { transform: none; }
