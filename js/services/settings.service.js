@@ -1,15 +1,15 @@
 /* Settings Service */
 const DEMO_SETTINGS = {
   storeName:        "J&C Tienda",
-  whatsappNumber:   "56912345678",
+  whatsappNumber:   "56950147783",
   address:          "Padre Hurtado, Región Metropolitana, Chile",
   googleMapsEmbed:  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13294.0!2d-70.8490!3d-33.5706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c1c5b36c8f69%3A0x9efcce2d3c0a44e!2sPadre%20Hurtado%2C%20Regi%C3%B3n%20Metropolitana%2C%20Chile!5e0!3m2!1ses!2scl!4v1700000000000",
   instagramUrl:     "https://instagram.com/jyc_tienda",
   announcement:     "🎉 ¡Llega tu pedido el mismo día en Padre Hurtado!",
   showAnnouncement: true,
   hours: [
-    { day: "Lunes – Viernes", open: "10:00", close: "20:00" },
-    { day: "Sábado",          open: "10:00", close: "18:00" },
+    { day: "Lunes – Viernes", open: "11:00", close: "20:00" },
+    { day: "Sábado",          open: "11:00", close: "18:00" },
     { day: "Domingo",         open: "Cerrado", close: "" }
   ],
   heroSlides: [
